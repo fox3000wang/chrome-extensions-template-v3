@@ -1,12 +1,47 @@
 console.log('inject load');
 
-async function main() {
-  url =
-    'https://search.51job.com/list/020000,000000,0000,00,9,99,%25E6%2595%25B0%25E6%258D%25AE%25E5%2588%2586%25E6%259E%2590%25E5%25B8%2588,2,38.html?lang=c&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&ord_field=0&dibiaoid=0&line=&welfare=&type__1458=n4IxnD0DyDgA9x0534%2Bx7ua1xRWoHsh4D';
+const pages = 10;
+let urls = [];
 
-  let temp = await superagent.get(url);
-  console.log('data', JSON.stringify(temp));
+async function main() {
+  console.log('inject main');
+
+  //setInterval(work, 2000);
+  let i = 0;
+  function loop() {
+    if (i++ === pages) {
+      console.log(urls);
+      return;
+    }
+    console.log('==============', i);
+    setTimeout(work, 2000);
+    setTimeout(loop, 5000);
+  }
+  loop();
 }
 
-setTimeout(main, 1000);
+function work() {
+  u = getUrls();
+  urls = urls.concat(u);
+  clickNext();
+  //console.log(urls);
+}
+
+function clickNext() {
+  document.getElementsByClassName('next')[0].children[0].click();
+}
+
+function getUrls() {
+  const joblist = document.getElementsByClassName('j_joblist')[0].children;
+  const urlList = [];
+
+  for (let i = 0; i < joblist.length; i++) {
+    url = joblist[i].getElementsByClassName('el')[0].href;
+    //console.log(url);
+    urlList.push(url);
+  }
+  return urlList;
+}
+
+setTimeout(main, 2000);
 //main();

@@ -7,7 +7,7 @@
     "default_icon": "icon.png",
     "default_title": "free your hands"
   },
-  "permissions": ["scripting"],
+  "permissions": ["scripting", "alarms", "notifications", "storage"],
   "web_accessible_resources": [
     {
       "resources": ["js/"],
@@ -19,7 +19,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://search.51job.com/*"],
+      "matches": ["https://*.51job.com/*"],
       "js": ["js/polyfill.min.js", "js/superagent.js", "js/inject.js"],
       "run_at": "document_start"
     }
