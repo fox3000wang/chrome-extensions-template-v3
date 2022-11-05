@@ -1,4 +1,4 @@
-// background.js
+// background.js 核心业务都存在这里
 console.log('background.js');
 
 pages = 20;
