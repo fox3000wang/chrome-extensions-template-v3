@@ -1,16 +1,17 @@
 {
   "manifest_version": 3,
-  "name": "getInfo",
-  "description": "description",
-  "version": "0.1.0",
+  "name": "name",
+  "description": "getPages",
+  "version": "0.1.1",
   "action": {
     "default_icon": "icon.png",
-    "default_title": "free your hands"
+    "default_title": "free your hands",
+    "default_popup": "popup.html"
   },
   "permissions": ["scripting", "alarms", "notifications", "storage"],
   "web_accessible_resources": [
     {
-      "resources": ["js/"],
+      "resources": ["/"],
       "matches": ["<all_urls>"]
     }
   ],
@@ -19,8 +20,8 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://search.51job.com/*"],
-      "js": ["js/polyfill.min.js", "js/superagent.js", "js/inject.js"],
+      "matches": ["https://*.51job.com/*"],
+      "js": ["js/inject.js"],
       "run_at": "document_start"
     }
   ],

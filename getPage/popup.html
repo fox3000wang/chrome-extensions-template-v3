@@ -1,0 +1,31 @@
+<!--
+  popup页面生命周期非常短，不适合放数据和业务，只适合展现ui
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      text-align: center;
+    }
+
+    button {
+      margin: 5px;
+      outline: none;
+    }
+
+    button:hover {
+      outline: #80DEEA dotted thick;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="sampleMinute1">Get Url List</button>
+  <button id="sampleMinute2">Get ZP Info</button>
+</body>
+
+<script src="./js/popup.js"></script><!-- 这个放在上面就会被坑 -->
+
+</html>
