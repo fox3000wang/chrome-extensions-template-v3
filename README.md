@@ -1,4 +1,13 @@
-# chrome 插件基础模版
+# chrome 插件基础模版 v3
+
+## 简介
+
+- 小 DEMO 功能
+- 点击 icon
+- 弹出 popup 窗口
+- 点击按钮 1
+- 自动弹出百度页面
+- 2 秒后自动关闭
 
 ## 文件介绍
 
@@ -13,10 +22,14 @@
 
 ### js 文件
 
+- background 核心调试文件
+- background.js 注入业务文件
+- popup.js 控制弹出框
+
+#### 依赖
+
 - superagent.js 无头浏览器库
 - polyfill.min.js 上面文件的依赖
-- background 核心调试文件
-- inject.js 注入业务文件
 
 ## 官方文档
 

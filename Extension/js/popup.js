@@ -1,5 +1,5 @@
 function getUrlList() {
-  chrome.runtime.sendMessage({});
+  chrome.runtime.sendMessage({ event: 'openUrl', url: 'https://www.baidu.com' });
 }
 
 function getInfo() {
